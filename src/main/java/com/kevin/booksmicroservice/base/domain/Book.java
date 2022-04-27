@@ -31,7 +31,6 @@ public class Book implements Serializable {
     @JoinColumn(name="author_id")
     private Author author;
 
-
     public Book(BookDTO objDto, Author author) {
         this.title = objDto.getTitle();
         this.description = objDto.getDescription();
@@ -41,6 +40,8 @@ public class Book implements Serializable {
                 .fromStringToLocalDate(objDto.getPublicationDate());
         this.author = author;
     }
+
+    // TODO add equals + hash code since you are using a set to store books
 }
 
 
